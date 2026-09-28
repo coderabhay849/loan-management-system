@@ -1,0 +1,780 @@
+{
+  "info": {
+    "_postman_id": "c5003381-fafe-4152-a6a8-03b36d983b3d",
+    "name": "loan Management System",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48074312",
+    "_collection_link": "https://go.postman.co/collection/48074312-c5003381-fafe-4152-a6a8-03b36d983b3d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/auth/register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Abhaysharma\",\r\n    \"email\": \"abhaysharma@test.com\",\r\n    \"password\": \"Test@1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/auth/login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"abhay@test.com\",\r\n    \"password\": \"Test@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/admin/loan-types",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc5MDUxNTcxMCwiZXhwIjoxNzkwNTE5MzEwfQ.B9SQAlD1LfhD6bwG7xnq1RnutLtLTs_qE_1znBGWbd9v91wRlId3X13gRdU3Yfu9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Business\",\r\n    \"description\": \"Personal loan for individual requirements\",\r\n    \"interestRate\": 10.5,\r\n    \"maxAmount\": 1000000,\r\n    \"maxTenureMonths\": 60\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/admin/loan-types",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "admin",
+            "loan-types"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/admin/loan-types/1",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc5MDUxMjk2MywiZXhwIjoxNzkwNTE2NTYzfQ.eaLPaFul0_vj1fh0_fFOnYrSRXcGH91fFPC3iluBFHwlNy-0No2RgHhkrBpE889y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"PERSONAL\",\r\n    \"description\": \"Updated personal loan\",\r\n    \"interestRate\": 11.0,\r\n    \"maxAmount\": 1500000,\r\n    \"maxTenureMonths\": 72\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/admin/loan-types/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "admin",
+            "loan-types",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/loans",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc5MDUxNTE4NywiZXhwIjoxNzkwNTE4Nzg3fQ.PNZuVahWV27OKquvagGUjA46INQGx1HoODe8ZRJEo_GlrSzmYi_AfnuZn4bKzuLj",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/customer/loans",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "loans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/loans/1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MTY1NDYsImV4cCI6MTc5MDUyMDE0Nn0.v6LQA1yRJ5AG1iSYmsKjYuBRTSgO3SmfhC-d7vZbWlUhYuzc9O03EENXYh2MN8TX",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"approved\": true,\r\n    \"remarks\": \"Application reviewed and approved\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/officer/loans/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "loans",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/loans/1/emi-schedule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MjAxMzAsImV4cCI6MTc5MDUyMzczMH0.usLXp6x1hxL3h7eeZ9Zv0DAa2gJ82X6lwMeH6oL40bWEzRIsyHINsTucg8WIZSpn",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/officer/loans/1/emi-schedule",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "loans",
+            "1",
+            "emi-schedule"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/loans/1/close",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MjIxMTgsImV4cCI6MTc5MDUyNTcxOH0.233o7XUO0hurli65239GrNt3xItgU9hj-qjkg28K7o_iXQSU80mtHX7VbigVcrdy",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/officer/loans/1/close",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "loans",
+            "1",
+            "close"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/admin/loan-types",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc5MDUxMjk2MywiZXhwIjoxNzkwNTE2NTYzfQ.eaLPaFul0_vj1fh0_fFOnYrSRXcGH91fFPC3iluBFHwlNy-0No2RgHhkrBpE889y",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/admin/loan-types",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "admin",
+            "loan-types"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/loans/1",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc5MDUxNTcxMCwiZXhwIjoxNzkwNTE5MzEwfQ.B9SQAlD1LfhD6bwG7xnq1RnutLtLTs_qE_1znBGWbd9v91wRlId3X13gRdU3Yfu9",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/customer/loans/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "loans",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/emi/calculate",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MjAxMzAsImV4cCI6MTc5MDUyMzczMH0.usLXp6x1hxL3h7eeZ9Zv0DAa2gJ82X6lwMeH6oL40bWEzRIsyHINsTucg8WIZSpn",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/officer/emi/calculate?loanAmount=100000&interestRate=10.5&tenureMonths=24",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "emi",
+            "calculate"
+          ],
+          "query": [
+            {
+              "key": "loanAmount",
+              "value": "100000"
+            },
+            {
+              "key": "interestRate",
+              "value": "10.5"
+            },
+            {
+              "key": "tenureMonths",
+              "value": "24"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/loans/1/emi-schedule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MjAxMzAsImV4cCI6MTc5MDUyMzczMH0.usLXp6x1hxL3h7eeZ9Zv0DAa2gJ82X6lwMeH6oL40bWEzRIsyHINsTucg8WIZSpn",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/officer/loans/1/emi-schedule",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "loans",
+            "1",
+            "emi-schedule"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/payments",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc5MDUyMTIzMywiZXhwIjoxNzkwNTI0ODMzfQ.6AffR5ly-XSAO6XgnmUfwCN3sr_8P94EfXztLtUadxSG5NIB4Dik2CwR_bmD3HHM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"emiId\": 1,\r\n    \"amount\": 12000.74,\r\n    \"paymentMethod\": \"UPI\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/customer/payments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "payments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/loans/1/documents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc5MDUyMzk4MywiZXhwIjoxNzkwNTI3NTgzfQ.3OnTnos0tUzJRsoaS67Z1sZWCnQcdiv0LcXZhWsE2focolxfaNgYAEE04ui9sdS4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "documentType",
+              "value": "AADHAR",
+              "type": "text",
+              "uuid": "5fe677cf-c6dd-40bd-8dd9-349193dea6e8"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "d4c8a691-e24e-479a-8d30-4de50a41990a",
+              "src": "/C:/Users/abhay/Downloads/ChatGPT Image Sep 21, 2026, 05_38_33 PM.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:9095/api/customer/loans/1/documents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "loans",
+            "1",
+            "documents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/loans/1/documents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc5MDUyMzk4MywiZXhwIjoxNzkwNTI3NTgzfQ.3OnTnos0tUzJRsoaS67Z1sZWCnQcdiv0LcXZhWsE2focolxfaNgYAEE04ui9sdS4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/customer/loans/1/documents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "loans",
+            "1",
+            "documents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/loans/documents/1",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc5MDUyMzk4MywiZXhwIjoxNzkwNTI3NTgzfQ.3OnTnos0tUzJRsoaS67Z1sZWCnQcdiv0LcXZhWsE2focolxfaNgYAEE04ui9sdS4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/customer/loans/documents/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "loans",
+            "documents",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/loans/1/history",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MjUxNTIsImV4cCI6MTc5MDUyODc1Mn0.itlq1p4dBgvHn5d8cFqLWca258gQPzEsWuO1TPs_iphGG1--qGjZ1iTwt0gjje0M",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/officer/loans/1/history",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "loans",
+            "1",
+            "history"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/customer/loans/1/statement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc5MDUyNzM0MCwiZXhwIjoxNzkwNTMwOTQwfQ.AHR8y0CO9eH6-NSpeJxmpGGXbX4F-0PSJEFkr6sS-7TTHfDw7cqa-ojyyVCphftg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/customer/loans/1/statement",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "customer",
+            "loans",
+            "1",
+            "statement"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/officer/loans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJMT0FOX09GRklDRVIiLCJpYXQiOjE3OTA1MzM2OTgsImV4cCI6MTc5MDUzNzI5OH0.zhYKJ58FXycZwCl6I6W2xQGeCgvMC7J5hIYoDUccCrcJnx0iKW-qU3-0tmm58lTE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/officer/loans?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "officer",
+            "loans"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9095/api/admin/users",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYmhheUB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc5MDUzNTI5NiwiZXhwIjoxNzkwNTM4ODk2fQ.42NlyzDbp70QlknNGbcCDcp2xkIrWLDjt-hi16Lb8Ed6Zfw3-EjSG1OOP2BvJLWl",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/api/admin/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "api",
+            "admin",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
